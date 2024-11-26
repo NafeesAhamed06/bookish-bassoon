@@ -1,0 +1,319 @@
+<!-- colors
+#Fd624f
+#ef4a73
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+    <title>NFdigital</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/" style="text-decoration: none;">NFdigital</a></div>
+        <ul class="nav-links">
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <div class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="./about.html">About</a></li>
+          </div>
+        </ul>
+      </nav>
+
+      <main>
+        <div class="header">
+          <img src="img/icon.png">
+          <p style="padding: 20px 0px 0px; font-size: 18px; text-shadow: 2px 2px 10px rgb(255, 255, 255, 0.4);">Welcome To</p>
+          <h1>NFdigital!</h1>
+          <p>We Are A Social Media Marketing Agency.<br> We Help Businessess To Grow Through Social Media<br/>Enter your email and get a seven day Free Trial</p>
+          <div class="Email-Form">
+            <form name="submit-to-google-sheet">
+              <input type="email" name="Email" placeholder="Your Email Address" required>
+              <button type="submit"><img src="./img/send-icon.png" style="width: 30px;"></button>
+            </form>
+            <span id="msg">
+            </span>
+          </div>
+        </div>
+      </main>
+</body>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+    background: #242582;
+    background: linear-gradient(35deg, #242582 0%, #242FA2 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Roboto Mono;
+  }
+
+a {
+  font-family: Roboto Mono;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  background: -webkit-linear-gradient(45deg,#ef4a73, #Fd624f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+
+
+.logo a{
+  font-family: Helvetica;
+  font-size: 26px;
+  text-decoration: none;
+  color: #fff;
+}
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background: linear-gradient(45deg,#ef4a73, #Fd624f);
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+
+}
+
+input[type=checkbox] {
+  display: none;
+} 
+
+/* HAMBURGER MENU */
+.hamburger {
+  background: transparent;
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+
+
+/* gdfkj */
+.header{
+  
+  padding: 40px;
+  text-align: center;
+  color: white;
+  font-size: 21px;
+}
+
+.header h1{
+  text-shadow: 2px 2px 10px rgb(255, 255, 255, 0.3);
+}
+
+.header p{
+  font-family: Poppins;
+  font-size: 16px;
+  padding: 40px;
+}
+
+.header li{
+  padding: 50px;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.header li a{
+  color: white;
+  text-decoration: none;
+}
+
+.header li a:hover{
+  color: rgb(36, 37, 130);
+}
+
+.header img{
+  width: 100px;
+}
+
+.Email-Form{
+  display:flex;
+  justify-content: center;
+}
+
+form{
+  z-index: 2;
+  background: transparent;
+  display: flex;
+  width: fit-content;
+}
+
+form input{
+  border-radius: 10px 0px 0px 10px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  height: 50px;
+  width: 350px;
+  font-size: 16px;
+}
+
+form input::placeholder{
+  font-weight: 600;
+  font-family: Roboto Mono;
+}
+
+form button{
+  background: linear-gradient(45deg,#ef4a73, #Fd624f);
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 90px;
+  cursor: pointer;
+}
+
+.Email-Form span{
+  font-size: 14px;
+  background: -webkit-linear-gradient(45deg,#ef4a73, #Fd624f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: absolute;
+  padding-top: 50px;
+  margin-top: 8px;
+  display: block;
+  z-index: 1;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+
+  .logo{
+    font-weight: 400;
+  }
+
+ .menu {
+    display:none;
+    position: absolute;
+    background: linear-gradient(45deg, #2a2de6 0%, #4c59eb 100%);
+    /* background: linear-gradient(35deg, rgba(83,80,218,1) 0%, rgba(18,17,60,1) 100%); */
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color:rgb(39, 37, 165);
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type=checkbox]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    border-radius: 5px;
+  }
+
+  .hamburger:hover{
+    background: transparent;
+    cursor: pointer;
+    
+
+  }
+
+  .header{
+  padding: 40px 0px 0px 0px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  }
+
+  .header img{
+    width: 100px;
+  }
+
+  .header p{
+    font-family: Poppins;
+    font-weight: bolder;
+    font-size: 13.7px;
+    padding: 30px 0px 40px;
+  }
+
+  .header li{
+    padding: 50px 20px;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+
+  .header li a{
+    font-family: Poppins;
+  }
+
+  form input{
+    width: 250px;
+    height: 42px;
+    border-radius: 6px 0px 0px 6px;
+  }
+
+  form input::placeholder{
+    font-weight: 200;
+    font-size: 14px;
+  }
+
+  form button{
+    border-radius: 0px 6px 6px 0px;
+    height: 42px;
+  }
+
+}
+</style>
+</html>

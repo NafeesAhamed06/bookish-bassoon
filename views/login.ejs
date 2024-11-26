@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+</head>
+<body>
+    <div class="Container">
+        <div class="form">
+            <form method="POST" action="/broadcaster/login">
+                <h3>Admin Login</h3>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    .Container{
+        height: 97vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .form{
+        padding: 30px;
+        /* width: 27%; */
+        background: #deb887;
+        border-radius: 20px;
+        -webkit-box-shadow: 10px 13px 20px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 13px 20px -2px rgba(0,0,0,0.75);
+        box-shadow: 4px 5px 12px 0px rgb(222 184 135);
+    }
+    form{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    }
+    form button{
+        background: white;
+    margin: 10px;
+    width: 40%;
+    border-radius: 5px;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+    }
+    form button:hover{
+        background: #a5a5a5;
+        color: rgb(255, 255, 255);
+        transition: 0.3s;
+    }
+    form button:active{
+        transition: 0.3s;
+        background: #3f3f3f;
+    }
+    form input{
+        border-radius: 8px;
+        border: 0;
+        padding: 10px;
+        margin: 5px;
+    }
+    form label{
+        font-size: 15px;
+        font-weight: 600;
+        font-family: 'Poppins';
+    }
+    form input:focus{
+        outline:none;
+    }
+</style>

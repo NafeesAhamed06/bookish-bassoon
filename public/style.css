@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main{
+  display: flex;
+}
+body {
+  -webkit-tap-highlight-color: transparent;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Roboto Mono;
+  background: rgb(195,195,195);
+  background: linear-gradient(2deg, rgb(195 195 195 / 64%) 0%, rgb(244 244 244 / 25%) 100%);
+  height: 100vh;
+}
+#people-grid{
+  background: #FFF6E9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  width: 20%;
+  border-radius: 7px;
+  margin: 5px 5px 5px 0px;
+  box-shadow: 3px 3px 6px #00000040;
+  border: 1px solid #0a003578;
+  justify-content: flex-start;
+}
+.names-HOLDER{
+  overflow: auto;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.names{
+  font-family: 'Poppins';
+  font-weight: 300;
+  background: #ffe6c7;
+  padding: 10px;
+  border-bottom: 1px solid;
+}
+#close{
+  display: none;
+}
+.count-holder{
+  border-radius: 7px 7px 0px 0px;
+  background: blanchedalmond;
+  padding: 8px;
+  text-align: center;
+  width: 100%;
+  border-bottom: 3px solid #0a003578;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#viewerCOUNT{
+  font-family: Poppins;
+}
+#video-grid {
+  background: #FFF6E9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column-reverse;
+  height: 90vh;
+  width: 80%;
+  border-radius: 7px;
+  margin: 5px;
+  box-shadow: 3px 3px 6px #00000040;
+  border: 1px solid #0a003578;
+}
+video{
+  border-radius: 8px;
+  min-width: 70%; /* 47 */
+  max-width: 70%; /* 47 */
+}
+
+.controls{
+  pointer-events: none;
+  margin-bottom: 70px;
+  display: flex;
+  width: 70%; /*46*/
+  padding: 5px;
+  border-radius: 5px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: rgb(255 255 255);
+  border: 2px solid #0000008a;
+}
+.controls button img{
+  width: 19px;
+}
+.controls button{
+  border-radius: 10px;
+  border: 0;
+  padding: 5px;
+  background: #edca9b;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.controls button:hover{
+  background: rgb(255, 192, 98);
+  border: 1px solid rgb(0, 0, 0);
+}
+.controls button:active{
+  background: rgb(255, 161, 21);
+  border: 1px solid rgb(255, 222, 114);
+}
+
+a {
+  font-family: 'Raleway';
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+.logOUT{
+  font-family: 'Roboto Mono';
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 5px;
+  background: lightgray;
+  border: 0;
+  cursor: pointer;
+}
+
+.logOUT:hover{
+  transition: 0.5s ease;
+  background: #000000;
+  color: white;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: #ffebd3;
+  /* margin-bottom: 5px; */
+  color: #000000;
+}
+
+.nav-links a {
+  color: #000000;
+}
+
+/* LOGO */
+.logo {
+  background: #0C0A3E;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 7px;
+}
+.logo img{
+  /* animation: blink 0.5s infinite; */
+  animation: blink 1s cubic-bezier(0.55, 0.06, 0.68, 0.19) infinite;
+  filter: invert(26%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(100%) contrast(100%);
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo a{
+  cursor: pointer;
+
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 23px;
+  text-decoration: none;
+  color: #000000;
+}
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li {
+  padding: 5px 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+input[type=checkbox] {
+  display: none;
+} 
+
+/* HAMBURGER MENU */
+.hamburger {
+  background: transparent;
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+.view-B{
+  display: none;
+}
+.count-holder img{
+  width: 17px;
+  position: absolute;
+  left: 4%;
+}
+@media (max-width:768px) {
+  video{
+    max-width: 80%;
+  }
+  #video-grid{
+    width: 70%;
+  }
+  #people-grid{
+    width: 30%;
+  }
+}
+@media (max-width: 420px){
+  video{
+    max-width: 99%;
+  }
+  .controls{
+    width: 99%;
+  }
+  #video-grid{
+    width: 99%;
+  }
+  #people-grid{
+    margin: 5px;
+    width: 99%;
+    display: none;
+  }
+  .view-B{
+    display: block;
+  }
+  #close{
+    display: block;
+  }
+}

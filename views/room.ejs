@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="room.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+    const ROLE = "<%= role %>"
+    console.log(ROOM_ID)
+    console.log(ROLE)
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Live Hall</title>
+  <style>
+    
+  </style>
+</head>
+<body  id="body">
+  <nav class="navbar" id="check">
+    <div class="logo" data-modal-target="#adminn"><img id="userIMG" src="/img/user.png"><a id="usernameTEXT" style="text-decoration: none; pointer-events: none;">Viewer</a></div>
+    <ul class="nav-links">
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      <div class="menu">
+        <button class="exit" onclick="leave();" type="button">Leave</button>
+      </div>
+    </ul>
+  </nav>
+  <main>
+    <div id="Details" class="details" style="display: none;">
+      <h3>
+        No live Available Now
+      </h3>
+      <img src="/img/nope/003-embarrassed.png" alt="">
+    </div>
+    <div id="video-grid">
+      <div class="img-holder">
+        <img src="/img/video/video-off.png" id="videoOFF" class="imgs" style="display: none;">
+        <img src="/img/video/audio-off.png" id="audioOFF" class="imgs" style="display: none;">
+      </div>
+      <video id="test-v" style="display: none;" muted autoplay></video>
+      <div class="controls" id="controls">
+        <div class="HOST">
+          <p id="HOST"></p>
+        </div>  
+        <div class="Fvideo" id="Fvideo"><img width="24px" src="/img/video/fullscreen.png"></div>
+      </div>
+    </div>
+    <!-- admin username modal-start -->
+  <div class="modal" id="adminn">
+    <div class="modal-header">
+      <div class="title">Your Details</div>
+      <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body2">
+      <a id="link"><strong id="nameee">Your Name: Viewer</strong></a>
+      <button class="modalBTNS" id="change">Change</button>
+  </div>
+</div>
+<div id="overlay"></div>
+<script src="/modalcode.js"></script>
+<link rel="stylesheet" href="modalstyle.css">
+<!--Share Link Modal-end -->
+  </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "Live-Streaming",
+  "version": "1.0.0",
+  "description": "A Camera Live Streaming App",
+  "main": "index.js",
+  "scripts": {
+    "Dstart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Nafees(Skeltron232)",
+  "license": "ISC",
+  "homepage": ".",
+  "dependencies": {
+    "connect": "^3.7.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.3",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.11.0",
+    "socket.io": "^2.5.1",
+    "uuid": "^8.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

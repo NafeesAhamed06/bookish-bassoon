@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+<link rel="stylesheet" href="modal.css">
+
+
+  <title>Live Stream</title>
+</head>
+<link rel="stylesheet" href="index.css">
+<body >
+  <div class="Container">
+    <div class="WAU">
+      <h1>who are you?</h1>
+      <div class="button-cont">
+        <button id="Broadcaster">Broadcaster</button>
+        <button id="Watcher">Watcher</button>
+      </div>
+    </div>
+    <div class="Cbtns">
+      <h2>JOIN & CREATE</h2>
+      <div class="button-cont">
+        <button id="continueJ" data-modal-target="#modal" style="pointer-events: none;">JOIN</button>
+        <button id="continueN" style="pointer-events: none;">NEW</button>
+      </div>
+    </div>
+  </div>
+  <!-- Join Modal -- start -->
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">JOIN ROOM</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="text" id="roomName">
+      <button id="ContinueI">GO!</button>
+      
+    </div>
+  </div>
+  <div id="overlay"></div>
+  <!-- Join Modal -- end -->
+</body>
+</html>
+<script src="main.js"></script>

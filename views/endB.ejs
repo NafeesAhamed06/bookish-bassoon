@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>END!!</title>
+</head>
+<body>
+    <div class="Container">
+       <div class="holder">
+        <h2>Broadcast Ended!</h2>
+        <h3>Start Another Broadcast</h3>
+        <button id="goBTN" class="goBTN">Go!</button>
+       </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('goBTN').addEventListener('click', () => {
+        location.href = '/Broadcaster'
+    })
+</script>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+    body{
+        overflow: hidden;
+        background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );
+    }
+      .Container{
+        height: 97vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .holder{
+        text-transform: uppercase;
+        border: 1px solid white;
+        font-size: 14px;
+        font-family: Poppins;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        background: #ffeadb;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 10px 10px 17px #ffd1fc;
+    }
+    .goBTN{
+        cursor: pointer;
+        font-weight: 600;
+        font-family: 'Poppins';
+        padding: 8px;
+        width: 40%;
+        border: 0;
+        border-radius: 10px;
+        background: #ff97f8;
+        color: white;
+        letter-spacing: 1px;
+        font-size: 15px;
+        text-shadow: 3px 2px 3px #ffeadb;
+        box-shadow: 2px 2px 14px 4px #ff97f8;
+        text-transform: uppercase;
+    }
+    .goBTN:hover{
+        background: #ff8af9;
+        transition: 0.3s ease;
+    }
+    .goBTN:active{
+        transition: 0.3s ease;
+        background: #fa5df2;
+        box-shadow: 2px 2px 14px 4px #ff97a0;
+
+    }
+</style>

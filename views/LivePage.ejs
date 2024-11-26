@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+    const ROLE = "<%= role %>"
+    const NAME = "<%= name %>"
+    console.log(ROOM_ID)
+    console.log(ROLE)
+    
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="live.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body  id="body" >
+<nav class="navbar" id="check">
+  <div class="logo"><a title="Your Details" data-modal-target="#adminn" id="adminNAME" style="text-decoration: none; ">Admin</a><img width="20px" src="/signal-stream.png"></div>
+  <ul class="nav-links">
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    <div class="menu">
+      <form method="POST" action="/broadcaster/logout">
+        <button class="logOUT" type="submit">Logout</button>
+      </form>
+    </div>
+  </ul>
+</nav>
+<main>
+
+    <h1 id="Details" style="display: none;"></h1>
+    <div id="video-grid">
+      <video id="test-v" style="display: none;" muted autoplay></video>
+      <div class="controls" id="controls">
+        <button class="mute-AB" id="audio-BTN" onclick="muteA();"><img id="audio-img" src="/img/mic.png"></button>
+        <button class="mute-VB" id="video-BTN" onclick="muteV();"><img id="video-img" src="/img/videocam.png"></button>
+        <!-- <button class="screen-SB" id="screen-BTN"><img id="screen-img" src="/img/screen_.png"></button> -->
+        <button data-modal-target="#modal" class="share-B"><img src="/img/share.png"></button>
+        <button class="leave-B" id="leave-BTN" onclick="location.href='/Leave'"><img id="leave-img" src="/img/logout.png"></button>
+        <button class="view-B" id="view-BTN" ><img id="viewers-img" src="/img/user.png"></button>
+      </div>
+    </div>
+    <div id="people-grid">
+      <div class="count-holder">
+        <img id="close" src="/img/video/close.png">
+        <li id="viewerCOUNT">Viewers: 0</li>
+      </div>
+      <div id="names-HOLDER" class="names-HOLDER">
+      </div>
+    </div>
+  </main>
+
+  <!-- admin username modal-start -->
+  <div class="modal" id="adminn">
+    <div class="modal-header">
+      <div class="title">Your Details</div>
+      <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body2">
+      <a id="link"><strong id="nameee">Your Name: Admin</strong></a>
+      <button class="modalBTNS" id="change">Change</button>
+  </div>
+</div>
+  <!-- admin username modal-end -->
+
+  <!--Share Link Modal-start -->
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Invite People</div>
+      <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+      <a id="link"><strong>Live Conference</strong></a>
+      <p>
+        copy or share this link to People to invite them to the Meeting
+      </p>
+          <button class="modalBTNS" id="copy">copy</button>
+      <button class="modalBTNS" id="share">share</button>
+  </div>
+</div>
+<div id="overlay"></div>
+<script src="/modalcode.js"></script>
+<link rel="stylesheet" href="modalstyle.css">
+<!--Share Link Modal-end -->
+
+</body>
+</html>
+<script>
+  const shareData = {
+    title: "Live Conference",
+    text: "Join The Conference",
+    url:`${window.location.origin}/Join-Live`,
+};
+
+
+copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(`${window.location.origin}/Join-Live`)
+})
+shareButton.addEventListener('click', () => {
+    navigator.share(shareData);
+})
+</script>

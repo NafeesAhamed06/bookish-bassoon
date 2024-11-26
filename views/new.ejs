@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="Container">
+       <div class="holder">
+        <h1 class="new">New User</h1>
+        <p class="usernamee">Username:</p>
+        <form id="nameFORM" >
+            <input minlength="3" maxlength="16" type="text" id="nameI" required>
+            <button class="goBTN" type="submit">Continue</button>
+        </form>
+        <p class="details">Add @Username To Continue</p>
+       </div>
+    </div>
+</body>
+</html>
+<script>
+    const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+    const [key, value] = cookie.split('=');
+        acc[key] = value;
+        return acc;
+    }, {});
+    
+    document.getElementById('nameFORM').addEventListener('submit', () => {
+        const username = document.getElementById('nameI').value
+        if (username) {
+            document.cookie = `username=${username}; path=/; max-age=31536000`;
+            return username;
+            location.href = '/Viewer'
+        } else {
+            alert("Username is required!");
+        }
+    })
+
+</script>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;1,9..40,300&display=swap');
+      body{
+        /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,43,115,1) 0%, rgba(4,0,4,1) 90% ); */
+        background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );
+    }
+      .Container{
+        height: 97vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .holder{
+        text-transform: uppercase;
+        border: 1px solid white;
+        font-size: 14px;
+        font-family: DM Sans;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        background: #ffeadb;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 10px 10px 17px #ffd1fc;
+    }
+    #nameFORM{
+        margin: 0px 5px 5px 5px;
+    }
+    #nameI{
+        margin: 0px 10px 10px 10px;
+        border: 0;
+        background: burlywood;
+        padding: 8px;
+        border-radius: 7px;
+        box-shadow: 2px 3px 11px 0px #deb88780;
+    }
+    #nameI:focus{
+        outline: none;
+        background: rgb(245, 182, 99);
+    }
+    #nameI::placeholder{
+        font-family: sans-serif;
+    }
+    .new{
+        font-weight: 200;
+    }
+    .holder p {
+        margin: 5px;
+    }
+    .usernamee{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .details{
+        font-size: 12px;
+    }
+    .goBTN{
+        cursor: pointer;
+        font-weight: 100;
+    font-family: DM Sans;
+    padding: 5px;
+    width: 40%;
+    border: 0;
+    border-radius: 10px;
+    background: #ff97f8;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-shadow: 2px 2px 3px #ffeadb;
+    box-shadow: 2px 2px 14px 4px #ff97f8;
+    text-transform: uppercase;
+    }
+    .goBTN:hover{
+        background: #ff8af9;
+        /* color: #ffeadb; */
+        transition: 0.3s ease;
+    }
+    .goBTN:active{
+        transition: 0.3s ease;
+        background: #fa5df2;
+        box-shadow: 2px 2px 14px 4px #ff97a0;
+
+    }
+</style>
